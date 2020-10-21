@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.mikael.dao.twotable.TwoTableDao">
+    <select id="selectFindall" resultType="map">
+        select a.id,a.username,a.password,b.id as bid,b.sex
+        FROM admin a LEFT JOIN beauty b ON a.`id`=b.`id` ;
+    </select>
+</mapper>
