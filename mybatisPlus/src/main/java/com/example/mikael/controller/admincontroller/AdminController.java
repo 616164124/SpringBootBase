@@ -9,11 +9,15 @@ package com.example.mikael.controller.admincontroller;
 
 import com.example.mikael.dao.admindao.AdminDao;
 import com.example.mikael.entity.admin.Admin;
-import com.example.mikael.response.Meta;
 import com.example.mikael.response.ResponseSource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @version: V1.0
@@ -26,18 +30,26 @@ import javax.annotation.Resource;
 @RestController
 @RequestMapping(value = "admin")
 public class AdminController {
+    private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
+
+    @Resource
+    private RedisTemplate redisTemplate;
 
     @Resource
     private AdminDao adminDao;
 
-    @GetMapping(value = "getId/{id}")
-    public ResponseSource<Admin> getAmdinById(@PathVariable("id") String id) {
+    @DeleteMapping(value = "getId/{id}")
+    public ResponseSource<Admin> getAmdinById(HttpServletRequest request, @PathVariable("id") String id) {
+
         Admin admin = adminDao.selectById(id);
+        redisTemplate.opsForValue().set("name", admin);
+        logger.info(request.getMethod());
+        redisTemplate.expire("name", 34L, TimeUnit.SECONDS);
         return new ResponseSource<Admin>(admin);
     }
 
     @PostMapping(value = "Inster")
-    public boolean insterAdmin() {
+    public boolean insterAdmin(HttpServletRequest request) {
         Admin admin = new Admin();
         admin.setId(45).setPassword("976837").setUsername("kkkkkk");
         if (adminDao.insert(admin) < 1) {

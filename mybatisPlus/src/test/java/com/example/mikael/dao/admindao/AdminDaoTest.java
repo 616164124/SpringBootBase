@@ -1,4 +1,4 @@
-package com.example.mikael;
+package com.example.mikael.dao.admindao;
 
 import com.example.mikael.dao.admindao.AdminDao;
 import com.example.mikael.entity.admin.Admin;
@@ -17,5 +17,6 @@ public class AdminDaoTest {
     public void getAdminById() {
         Admin admin = adminDao.selectById("1");
         System.out.println(admin);
+
     }
 }

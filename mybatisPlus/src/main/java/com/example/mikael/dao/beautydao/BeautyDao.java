@@ -19,4 +19,5 @@ import com.example.mikael.entity.beauty.Beauty;
  * @data: 2020-10-21
  **/
 public interface BeautyDao extends BaseMapper<Beauty> {
+
 }

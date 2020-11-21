@@ -21,5 +21,6 @@ import java.util.Map;
  * @data: 2020-10-21
  **/
 public interface TwoTableDao {
-      List<Map<String, Object>> selectFindall();
+    List<Map<String, Object>> selectFindall();
+
 }

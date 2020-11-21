@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mikael.dao.CourseDao">
+    <resultMap id="BaseResultMap" type="com.example.mikael.entity.Course">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="studentid" jdbcType="INTEGER" property="studentid"/>
+        <result column="courseid" jdbcType="INTEGER" property="courseid"/>
+        <result column="grade" jdbcType="VARCHAR" property="grade"/>
+        <result column="time" jdbcType="TIMESTAMP" property="time"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, studentid, courseid, grade, `time`
+  </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from course
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from course
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.example.mikael.entity.Course"
+            useGeneratedKeys="true">
+    insert into course (studentid, courseid, grade, 
+      `time`)
+    values (#{studentid,jdbcType=INTEGER}, #{courseid,jdbcType=INTEGER}, #{grade,jdbcType=VARCHAR}, 
+      #{time,jdbcType=TIMESTAMP})
+  </insert>
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.example.mikael.entity.Course"
+            useGeneratedKeys="true">
+        insert into course
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="studentid != null">
+                studentid,
+            </if>
+            <if test="courseid != null">
+                courseid,
+            </if>
+            <if test="grade != null">
+                grade,
+            </if>
+            <if test="time != null">
+                `time`,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="studentid != null">
+                #{studentid,jdbcType=INTEGER},
+            </if>
+            <if test="courseid != null">
+                #{courseid,jdbcType=INTEGER},
+            </if>
+            <if test="grade != null">
+                #{grade,jdbcType=VARCHAR},
+            </if>
+            <if test="time != null">
+                #{time,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.example.mikael.entity.Course">
+        update course
+        <set>
+            <if test="studentid != null">
+                studentid = #{studentid,jdbcType=INTEGER},
+            </if>
+            <if test="courseid != null">
+                courseid = #{courseid,jdbcType=INTEGER},
+            </if>
+            <if test="grade != null">
+                grade = #{grade,jdbcType=VARCHAR},
+            </if>
+            <if test="time != null">
+                `time` = #{time,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.example.mikael.entity.Course">
+    update course
+    set studentid = #{studentid,jdbcType=INTEGER},
+      courseid = #{courseid,jdbcType=INTEGER},
+      grade = #{grade,jdbcType=VARCHAR},
+      `time` = #{time,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
