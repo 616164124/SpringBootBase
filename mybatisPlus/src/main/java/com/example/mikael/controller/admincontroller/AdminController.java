@@ -7,6 +7,8 @@
  */
 package com.example.mikael.controller.admincontroller;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.example.mikael.dao.admindao.AdminDao;
 import com.example.mikael.entity.admin.Admin;
 import com.example.mikael.response.ResponseSource;
@@ -57,5 +59,22 @@ public class AdminController {
         }
         return true;
     }
+
+    @GetMapping("getId/{id}")
+    public Admin getId(@RequestParam("id") String id) {
+        String admin_getId = (String) redisTemplate.opsForValue().get("admin_getId_" + id);
+        if (admin_getId == null) {
+            Admin admin = adminDao.selectById(id);
+            //将java对象转化成string类型存入redis中
+            String adminJson = JSON.toJSONString(admin);
+            redisTemplate.opsForValue().set("admin_getId_" + id, adminJson, 10000, TimeUnit.SECONDS);
+            System.out.println("getid");
+            return admin;
+        }
+        //redis中存放的是  "{\"id\":3,\"password\":\"555\",\"username\":\"kk\"}"
+        //将redis中的string类型转化成java对象
+        return JSONObject.parseObject(admin_getId, Admin.class);
+    }
+
 
 }

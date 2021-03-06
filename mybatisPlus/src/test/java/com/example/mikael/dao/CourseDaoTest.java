@@ -1,10 +1,8 @@
 package com.example.mikael.dao;
 
 import com.example.mikael.entity.Course;
-import com.mysql.cj.x.protobuf.MysqlxDatatypes;
 import org.apache.ibatis.session.ExecutorType;
 import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.jupiter.api.Test;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.boot.test.context.SpringBootTest;
