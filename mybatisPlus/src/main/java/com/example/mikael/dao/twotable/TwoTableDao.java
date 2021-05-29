@@ -23,4 +23,6 @@ import java.util.Map;
 public interface TwoTableDao {
     List<Map<String, Object>> selectFindall();
 
+   Map<String, String>  selectBysql();
+
 }

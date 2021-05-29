@@ -1,11 +1,6 @@
 package com.example.mikael.config;
 
 
-/**
- * @Author: JCccc
- * @CreateTime: 2018-09-11
- * @Description:
- */
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;

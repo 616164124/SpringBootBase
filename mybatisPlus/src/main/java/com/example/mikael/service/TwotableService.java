@@ -40,4 +40,8 @@ public class TwotableService {
 
         return maps;
     }
+
+    public Map<String,String> TwoTableDao(){
+        return twoTableDao.selectBysql();
+    }
 }

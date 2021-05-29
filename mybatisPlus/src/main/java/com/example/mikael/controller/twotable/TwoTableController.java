@@ -39,6 +39,10 @@ public class TwoTableController {
 
 
         List<Map<String, Object>> findAll = twotableService.getFindAll();
+        System.out.println("================");
+        Map<String, String> map = twotableService.TwoTableDao();
+        String username = map.get("username");
+        System.out.println("=======username=======>"+username);
         return findAll;
     }
 }

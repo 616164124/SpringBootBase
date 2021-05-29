@@ -12,7 +12,7 @@ import javax.annotation.Resource;
 /**
  * @description:
  * @author: mikael
- * @data: 2020/11/16
+ * @data:
  */
 @RequestMapping("test")
 @RestController

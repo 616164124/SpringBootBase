@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.example.mikael.dao.twotable.TwoTableDao">
+    <sql id="first_sql">
+      select * from admin
+    </sql>
     <select id="selectFindall" resultType="map" useCache="false">
         select a.id,a.username,a.password,b.id as bid,b.sex
-        FROM admin a LEFT JOIN beauty b ON a.`id`=b.`id` ;
+        FROM admin a LEFT JOIN beauty b ON a.id=b.id
     </select>
+    <select id="selectBysql"  resultType="java.util.Map" useCache="false">
+        select username from  ( <include refid="first_sql"/>) t where id=12
+    </select>
+
 </mapper>
