@@ -23,7 +23,7 @@ public class UserDetailsServieImpl implements UserDetailsService {
 
         log.info("执行loadUserByUsername");
         //1、查询数据库判断用户名是否存在，
-        if(!"admin".equals(s)){
+        if (!"admin".equals(s)) {
             throw new UsernameNotFoundException("用户名不存在");
         }
         //2、把查询出来的密码，进行解析，或者直接把密码放入构造方法

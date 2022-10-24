@@ -27,6 +27,7 @@ import java.io.PrintWriter;
 public class MyAccessDeniedHandler implements AccessDeniedHandler {
     @Override
     public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException accessDeniedException) throws IOException, ServletException {
+
         //响应状态
         response.setStatus(HttpServletResponse.SC_FORBIDDEN);
         //返回json格式
