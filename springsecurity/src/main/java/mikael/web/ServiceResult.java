@@ -37,7 +37,7 @@ public  class  ServiceResult implements Serializable {
 		this.resultCode = resultCode;
 	}
 
-	public String getResultMsg() {
+	public String getResultMsg(String message) {
 		return resultMsg;
 	}
 
