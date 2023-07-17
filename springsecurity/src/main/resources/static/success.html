@@ -4,7 +4,32 @@
     <meta charset="UTF-8">
     <title>succes</title>
 </head>
+<script src="jquery-3.7.0.min.js"></script>
 <body>
 <div>登录成功！！！</div>
+<button id="anniu1" onclick="action01()">按钮1</button>
+
+
 </body>
+<script type="application/javascript">
+    function action01(){
+
+    var  json = {}
+
+      $.ajax({
+              url: "http://localhost:8080/user/test01",
+              type: "get",
+              async: false,//同步
+              contentType: 'application/json;charset=utf-8',
+              success: function (data) {
+                  console.log(data)
+              }
+          });
+    }
+
+
+
+</script>
+
+
 </html>

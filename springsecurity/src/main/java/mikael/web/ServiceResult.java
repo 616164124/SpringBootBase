@@ -3,6 +3,7 @@ package mikael.web;
 import java.io.Serializable;
 
 public  class  ServiceResult implements Serializable {
+	private final static long serialVersionUID = 1L;
 	private String resultCode = "000000";
 	private String resultMsg = "";
 	private Object resultObj = null;
