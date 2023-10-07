@@ -16,6 +16,7 @@ public class admin implements Serializable {
     /**
      * 
      */
+    @Size(max = 3,message = "太长")
     private String username;
 
     /**
