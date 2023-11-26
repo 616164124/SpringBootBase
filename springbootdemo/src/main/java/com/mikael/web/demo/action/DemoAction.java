@@ -1,9 +1,11 @@
 package com.mikael.web.demo.action;
 
 
+import com.mikael.utils.respon.ServiceResult;
 import com.mikael.web.demo.domain.admin;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,5 +40,14 @@ public class DemoAction {
         System.out.println("========");
         throw new Exception();
     }
+
+    @RequestMapping(value = "/advice01",method = RequestMethod.GET)
+    public ServiceResult advice01(@RequestBody admin admin){
+
+
+        return new ServiceResult(200, "success", null);
+    }
+
+
 
 }

@@ -1,4 +1,4 @@
-package com.mikael.web.utils.exception;
+package com.mikael.utils.exception;
 
 public class DefineException extends Exception {
     private static final long serialVersionUID = -3387516993124229948L;

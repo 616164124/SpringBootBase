@@ -8,8 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @MapperScan
 public class Springbootdemo8090Application {
 
-	public static void main(String[] args) {
-		SpringApplication.run(Springbootdemo8090Application.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(Springbootdemo8090Application.class, args);
+    }
 
 }

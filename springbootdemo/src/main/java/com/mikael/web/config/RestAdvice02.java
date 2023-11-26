@@ -1,6 +1,7 @@
 package com.mikael.web.config;
 
 
+import com.mikael.utils.exception.DefineException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -15,10 +16,13 @@ public class RestAdvice02 {
      * @param e
      * @return
      */
-    @ExceptionHandler(Exception.class)
-    public String handleException(Exception e) {
-        Log.info("handleException========");
+    @ExceptionHandler(DefineException.class)
+    public String handleException(DefineException e) {
+        Log.info("handleException========"+e);
         return "redirect:/error.html";
     }
 
+    public static void main(String[] args) {
+        
+    }
 }

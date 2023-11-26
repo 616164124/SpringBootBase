@@ -1,4 +1,4 @@
-package com.mikael.web.utils.respon;
+package com.mikael.utils.respon;
 
 import java.io.Serializable;
 
@@ -6,6 +6,7 @@ public class ServiceResult implements Serializable {
     private Integer code;
     private String msg;
     private Object obj;
+
 
     public ServiceResult(Integer code, String msg, Object obj) {
         this.code = code;
@@ -42,7 +43,7 @@ public class ServiceResult implements Serializable {
 
     @Override
     public String toString() {
-        return "ServiceResult{" +
+        return "ServiceResult={" +
                 "code=" + code +
                 ", msg=\"" + msg + '\"' +
                 ", obj=" + obj +
