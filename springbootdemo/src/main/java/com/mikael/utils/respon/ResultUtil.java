@@ -5,6 +5,7 @@ import javax.validation.constraints.NotNull;
 
 public  class ResultUtil {
 
+
     public static ServiceResult put(Integer integer, String msg, Object o) {
         ServiceResult serviceResult = new ServiceResult();
         serviceResult.setCode(integer);

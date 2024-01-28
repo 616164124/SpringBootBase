@@ -16,4 +16,10 @@ public class RedisProperties {
     private String password;
     private int database;
     private int lockWatchdogTimeout;
+
+
+
+
 }
+
+
