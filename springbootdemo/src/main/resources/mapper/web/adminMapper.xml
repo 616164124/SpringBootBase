@@ -5,16 +5,27 @@
 <mapper namespace="com.mikael.web.demo.mapper.AdminMapper">
 
     <resultMap id="BaseResultMap" type="com.mikael.web.demo.domain.admin">
-            <id property="pokid" column="pokid" jdbcType="BIGINT"/>
-            <result property="username" column="username" jdbcType="VARCHAR"/>
-            <result property="password" column="password" jdbcType="VARCHAR"/>
+        <id property="pokid" column="pokid" jdbcType="BIGINT"/>
+        <result property="username" column="username" jdbcType="VARCHAR"/>
+        <result property="password" column="password" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        pokid,username,password
+        pokid
+        ,username,password
     </sql>
 
     <select id="selectAdmin" resultType="com.mikael.web.demo.domain.admin">
+        select *
+        from admin
+    </select>
+    <select id="selectAdminByid" resultType="com.mikael.web.demo.domain.admin">
+
         select * from admin
+        <if test="username != ''">
+          where  username = #{username}
+        </if>
+
+
     </select>
 </mapper>
