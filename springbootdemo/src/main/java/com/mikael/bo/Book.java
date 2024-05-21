@@ -4,11 +4,11 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class Book implements Serializable {
-    private String id;
-    private String tilte;
-    private String auther;
-    private String world_count;
-    private String date;
+    private String id;//id
+    private String tilte;//主题
+    private String auther;//作者
+    private String world_count;//字数
+    private String date;//发布日期
 
 
     public Book(String id, String tilte, String auther, String world_count, String date) {

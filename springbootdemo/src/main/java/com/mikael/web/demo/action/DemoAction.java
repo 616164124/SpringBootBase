@@ -70,6 +70,7 @@ public class DemoAction {
     @RequestMapping(value = "/method", method = RequestMethod.GET)
     public ServiceResult method() {
         methodService bean = applicationContext.getBean("Wx", methodService.class);
+        System.out.println(bean.pay());
         return new ServiceResult(200, bean.pay(), null);
     }
 
@@ -90,6 +91,11 @@ public class DemoAction {
 
         String a = "{name:hua}";
 
+        try {
+            throw  new Exception("错误了！！！1");
+        }catch (Exception e){
+            System.out.println(e);
+        }
 
         System.out.println(HttpStatus.LOCKED.value() + "==" + HttpStatus.LOCKED.getReasonPhrase());
 

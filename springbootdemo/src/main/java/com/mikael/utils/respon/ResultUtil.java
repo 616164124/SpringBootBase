@@ -1,5 +1,7 @@
 package com.mikael.utils.respon;
 
+import org.springframework.beans.BeanUtils;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
