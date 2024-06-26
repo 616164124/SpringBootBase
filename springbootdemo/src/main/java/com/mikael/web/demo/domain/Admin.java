@@ -7,7 +7,7 @@ import java.io.Serializable;
  * 
  * @TableName admin
  */
-public class admin implements Serializable {
+public class Admin implements Serializable {
     /**
      * 
      */
@@ -79,7 +79,7 @@ public class admin implements Serializable {
         if (getClass() != that.getClass()) {
             return false;
         }
-        admin other = (admin) that;
+        Admin other = (Admin) that;
         return (this.getPokid() == null ? other.getPokid() == null : this.getPokid().equals(other.getPokid()))
             && (this.getUsername() == null ? other.getUsername() == null : this.getUsername().equals(other.getUsername()))
             && (this.getPassword() == null ? other.getPassword() == null : this.getPassword().equals(other.getPassword()));

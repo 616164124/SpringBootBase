@@ -1,14 +1,13 @@
 package com.mikael.web.demo.service.impl;
 
 
-import com.mikael.web.demo.domain.admin;
+import com.mikael.web.demo.domain.Admin;
 import com.mikael.web.demo.mapper.AdminMapper;
 import com.mikael.web.demo.service.adminService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author hua
@@ -21,8 +20,8 @@ public class adminServiceImpl
     @Resource
     private AdminMapper adminMapper;
 
-    public List<admin> selectAdmin() {
-        List<admin> stringStringMap = adminMapper.selectAdmin();
+    public List<Admin> selectAdmin() {
+        List<Admin> stringStringMap = adminMapper.selectAdmin();
 
         return stringStringMap;
     }

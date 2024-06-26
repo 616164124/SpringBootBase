@@ -3,7 +3,7 @@ package com.mikael.web.demo.action;
 
 import com.mikael.utils.respon.CodeEnum;
 import com.mikael.utils.respon.ServiceResult;
-import com.mikael.web.demo.domain.admin;
+import com.mikael.web.demo.domain.Admin;
 import com.mikael.web.demo.service.methodService;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.MDC;
@@ -33,14 +33,14 @@ public class DemoAction {
     private com.mikael.web.demo.service.adminService adminService;
 
     @RequestMapping(value = "/selectAdmin", method = RequestMethod.GET)
-    public List<admin> selectAdmin() {
-        List<admin> map = adminService.selectAdmin();
+    public List<Admin> selectAdmin() {
+        List<Admin> map = adminService.selectAdmin();
         return map;
     }
 
     @RequestMapping(value = "/selectAdmin1", method = RequestMethod.GET)
-    public List<admin> selectAdmi1n(@RequestBody @Validated admin admin) {
-        List<admin> map = adminService.selectAdmin();
+    public List<Admin> selectAdmi1n(@RequestBody @Validated Admin admin) {
+        List<Admin> map = adminService.selectAdmin();
         return map;
     }
 
@@ -56,7 +56,7 @@ public class DemoAction {
     }
 
     @RequestMapping(value = "/advice01", method = RequestMethod.GET)
-    public ServiceResult advice01(@RequestBody admin admin) {
+    public ServiceResult advice01(@RequestBody Admin admin) {
         ConcurrentHashMap<String, String> hashMap = new ConcurrentHashMap<>();
         hashMap.size();
         hashMap.put("s", "s");
@@ -92,8 +92,8 @@ public class DemoAction {
         String a = "{name:hua}";
 
         try {
-            throw  new Exception("错误了！！！1");
-        }catch (Exception e){
+            throw new Exception("错误了！！！1");
+        } catch (Exception e) {
             System.out.println(e);
         }
 

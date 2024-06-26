@@ -1,7 +1,7 @@
 package com.mikael.web.demo.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.mikael.web.demo.domain.admin;
+import com.mikael.web.demo.domain.Admin;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -13,10 +13,12 @@ import java.util.List;
  * @Entity generator.domain.admin
  */
 @Mapper
-public interface AdminMapper extends BaseMapper<admin> {
+public interface AdminMapper extends BaseMapper<Admin> {
 
-    List<admin> selectAdmin();
+    List<Admin> selectAdmin();
 
-    List<admin> selectAdminByid(String username);
+    List<Admin> selectAdminByid(String username);
+
+    int insertAll(Admin admin);
 
 }

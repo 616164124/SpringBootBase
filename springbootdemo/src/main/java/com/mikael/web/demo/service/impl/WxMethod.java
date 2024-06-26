@@ -1,6 +1,6 @@
 package com.mikael.web.demo.service.impl;
 
-import com.mikael.web.demo.domain.admin;
+import com.mikael.web.demo.domain.Admin;
 import com.mikael.web.demo.mapper.AdminMapper;
 import com.mikael.web.demo.service.methodService;
 import org.slf4j.Logger;
@@ -22,13 +22,13 @@ public class WxMethod implements methodService {
 
     @Override
     public String pay() {
-        List<admin> admins = adminMapper.selectAdmin();
+        List<Admin> admins = adminMapper.selectAdmin();
         return "Wx支付";
     }
 
     @Override
     public String say() {
-        List<admin> admins = adminMapper.selectAdminByid("21391cd3");
+        List<Admin> admins = adminMapper.selectAdminByid("21391cd3");
         return null;
     }
 }

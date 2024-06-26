@@ -1,6 +1,6 @@
 package com.mikael.web.demo.service.impl;
 
-import com.mikael.web.demo.domain.admin;
+import com.mikael.web.demo.domain.Admin;
 import com.mikael.web.demo.mapper.AdminMapper;
 import com.mikael.web.demo.service.methodService;
 import org.springframework.stereotype.Service;
@@ -24,7 +24,7 @@ public class AliMethod implements methodService {
 
     @Override
     public String say() {
-        List<admin> admins = adminMapper.selectAdmin();
+        List<Admin> admins = adminMapper.selectAdmin();
 
         return null;
     }
