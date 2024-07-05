@@ -43,6 +43,7 @@ public class RedisAction {
     //redissson
     @RequestMapping(value = "/redissson",method = RequestMethod.GET)
     public ServiceResult redissson(){
+        StopWatch stopWatch = new StopWatch();
 
         return  ResultUtil.success();
     }
